@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "name": "PyBuggy",
+    "env": {
+        "DB_HOST": "@db-host-d94",
+        "SECRET": "@secret-d94"
+    },
+    "build": {
+        "env": {
+            "DB_HOST": "@db-host-d94",
+            "SECRET": "@secret-d94"
+        }
+    },
+    "builds": [
+        
+        {
+            "src": "server.js",
+            "use": "@now/node-server"
+        },
+        {
+            "src": "client/package.json",
+            "use": "@now/static-build"
+        }
+    ],
+    "routes": [{
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "*"
+        },
+        "src": "/.*",
+        "dest": "server.js"
+    }]
+}

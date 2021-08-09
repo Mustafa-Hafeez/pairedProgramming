@@ -1,0 +1,120 @@
+.dash {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.dash-item {
+    height: 100%;
+    display: flex;
+}
+
+.sidemenu {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    border-right: 1px solid #ccc;
+    padding-top: 0;
+}
+
+.problems-header {
+    width:  100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 10px;
+    background: #444;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+}
+
+.problem {
+    width: 85%;
+    height: 40px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}
+
+.dash-content {
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dash-content-item {
+    height: 100%;
+}
+
+.editor-container{
+    width: 70%;
+}
+
+.editor {
+    width: 100%;
+}
+
+.right-side {
+    width: 29.5%;
+}
+
+.console {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 10px;
+}
+
+.console-editor {
+    color: #777;
+}
+
+.problem-info {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 35%;
+}
+
+.title {
+    font-size: 18pt;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.description {
+    color: #333;
+    margin-left: 5px;
+}
+
+.problem-status {
+    margin-bottom: 10px;
+    width: 99%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.status-item {
+    margin-right: 20px;
+    display: flex;
+    width: auto;
+    font-size: 12pt;  
+}

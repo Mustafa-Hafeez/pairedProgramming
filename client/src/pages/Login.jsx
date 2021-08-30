@@ -83,8 +83,9 @@ class Login extends Component {
 
     render() {
         var loginForm = (<form onSubmit={this.onSubmit}>
-            <h1>Login Below!</h1>
-            <input
+            <h1>Log in to <b>PyBuggy</b>:</h1>
+            <input 
+                className="username"
                 type="text"
                 name="user"
                 placeholder="Email or Username"
@@ -93,6 +94,7 @@ class Login extends Component {
                 required
             />
             <input
+                className="password"
                 type="password"
                 name="password"
                 placeholder="Enter password"
@@ -100,7 +102,7 @@ class Login extends Component {
                 onChange={this.handleInputChange}
                 required
             />
-            <input type="submit" value="Submit"/>
+            <input className="submit" type="submit" value="Submit"/>
         </form>);
         var page = this.state.isLoggedIn ? this.props.history.push('/') : loginForm;
         return (

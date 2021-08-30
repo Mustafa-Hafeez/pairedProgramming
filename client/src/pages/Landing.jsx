@@ -6,7 +6,6 @@ class Landing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
         };
     }
 
@@ -30,7 +29,8 @@ class Landing extends Component {
         return (
 
             <div className="page">
-                LANDING PAGE
+                Welcome to PyBuggy!
+                <h4>Log in or register to get started 🐞</h4>
             </div>
         );
       }

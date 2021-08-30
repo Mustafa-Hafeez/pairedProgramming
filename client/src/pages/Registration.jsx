@@ -92,7 +92,7 @@ class Registration extends Component {
 
     render() {
         var loginForm = (<form onSubmit={this.onSubmit}>
-            <h1>Login Below!</h1>
+            <h2>Register to <b>PyBuggy</b>:</h2>
             <input
                 type="email"
                 name="email"
@@ -102,6 +102,7 @@ class Registration extends Component {
                 required
             />
             <input
+                className="register-input"
                 type="text"
                 name="username"
                 placeholder="Student #"
@@ -110,6 +111,7 @@ class Registration extends Component {
                 required
             />
             <input
+                className="register-input"
                 type="password"
                 name="password"
                 placeholder="Enter password"
@@ -118,6 +120,7 @@ class Registration extends Component {
                 required
             />
             <input
+                className="register-input"
                 type="text"
                 name="firstname"
                 placeholder="First Name"
@@ -126,6 +129,7 @@ class Registration extends Component {
                 required
             />
             <input
+                className="register-input"
                 type="text"
                 name="lastname"
                 placeholder="Last Name"
@@ -138,16 +142,19 @@ class Registration extends Component {
                 <option value={0}>0</option>
                 <option value={1}>1</option>
                 <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
             </select>
-            <input type="submit" value="Submit"/>
+
+            <input className="submit" type="submit" value="Submit"/>
         </form>);
         var page = this.state.isLoggedIn ? this.props.history.push('/') : loginForm;
         return (
-            <div>
+            <div className="register">
                 <h2>Informed Consent Form & Registration </h2>
 
-                <div><strong>Title:</strong> PYBUGGY Study</div> 
-                <div><strong>Investigators:</strong> Brian Harrington, Rachel D’souza, Angela Zavaleta Bernuy</div>
+                <div><strong>Title:</strong> PyBuggy Study</div> 
+                <div><strong>Investigators:</strong> Brian Harrington, Mustafa Hafeez, Yara Radwan</div>
 
                 <p>I hereby consent to participate in a usability study conducted by the Investigators (listed above) as part of research conducted by the Department of Computer & Mathematical Sciences at the University of Toronto Scarborough.</p>
 
@@ -160,7 +167,7 @@ class Registration extends Component {
                     <li>I may receive compensation in the form of a bonus mark in <strong>CSCA20</strong></li>
                     <li>I am free to withdraw at any time during the study without the need to give any explanation or penalty.</li>
                     <li>All materials and results will be kept confidential. Identifying information is collected for the sole purpose of attributing bonus marks. </li>
-                    <li>I can contact the course instructor, Brian Harrington (brian.harrigton@utsc.utoronto.ca) or invigilator Rachel (rachel.dsouza@mail.utoronto.ca) with any questions or concerns.</li>
+                    <li>I can contact the course instructor, Brian Harrington (brian.harrigton@utsc.utoronto.ca) or invigilator Mustafa (mustafa.hafeez@mail.utoronto.ca) with any questions or concerns.</li>
                 </ul>
 
                 {this.state.working ?

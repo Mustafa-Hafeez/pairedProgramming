@@ -1,0 +1,77 @@
+Arguments: 
+  /usr/local/Cellar/node/15.3.0/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add ace-builds/src-noconflict/theme-solarized_dark
+
+PATH: 
+  /Users/yararadwan/opt/anaconda3/bin:/Users/yararadwan/.cabal/bin:/Users/yararadwan/.ghcup/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.3.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/ace-builds%2fsrc-noconflict/theme-solarized_dark: Request "https://registry.yarnpkg.com/ace-builds%2fsrc-noconflict/theme-solarized_dark" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:66997:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:140749:22)
+      at Request.emit (node:events:376:20)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:141721:10)
+      at Request.emit (node:events:376:20)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:141643:12)
+      at Object.onceWrapper (node:events:482:28)
+      at IncomingMessage.emit (node:events:388:22)
+      at endReadableNT (node:internal/streams/readable:1294:12)
+      at processTicksAndRejections (node:internal/process/task_queues:80:21)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "server": "nodemon server.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "cd client && npm install && npm run build"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "bcrypt": "^5.0.1",
+      "bcryptjs": "^2.4.3",
+      "body-parser": "^1.19.0",
+      "concurrently": "^5.0.0",
+      "cookie-parser": "^1.4.4",
+      "cors": "^2.8.5",
+      "cryptr": "^6.0.1",
+      "csv-express": "^1.2.2",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-session": "^1.17.0",
+      "is-empty": "^1.2.0",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^5.7.9",
+      "morgan": "^1.9.1",
+      "node-pty": "^0.9.0",
+      "passport": "^0.4.0",
+      "passport-jwt": "^4.0.0",
+      "pg": "^7.12.1",
+      "python-shell": "^1.0.8",
+      "sequelize": "^5.21.2",
+      "ulid": "^2.3.0",
+      "validator": "^12.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.12"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

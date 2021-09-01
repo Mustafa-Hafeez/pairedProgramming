@@ -8,7 +8,9 @@ import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/theme-xcode";
 
 import "./style/Home.css";
 import "./style/Dashboard.css";
@@ -377,12 +379,12 @@ class Dashboard extends Component {
                                 {this.state.problemComplete ?
                                     <Badge pill variant="success">Complete</Badge>
                                 :
-                                    <Badge pill variant="warning">Incomplete</Badge>
+                                    <Badge pill variant="primary">Incomplete</Badge>
                                 }
                             </div>
                             <div className='status-item'> 
                                 {this.state.active !== '' && this.state.running ?
-                                    <Badge pill variant="danger">Running...</Badge>
+                                    <Badge pill variant="secondary">Running...</Badge>
                                 :
                                     <span></span>
                                 }
@@ -393,7 +395,7 @@ class Dashboard extends Component {
                         <AceEditor
                             placeholder="Enter python code"
                             mode="python"
-                            theme="github"
+                            theme="solarized_dark"
                             name="editor"
                             className="editor"
                             onLoad={this.onLoad}
@@ -427,6 +429,7 @@ class Dashboard extends Component {
                                     {this.state.currentProblem.name}
                                 </div>
                             }
+                            <hr className="problem-divider"></hr>
 
                             {this.state.isAdmin && this.state.creatingProblem  ?   
                                 <Form.Control className='description' as="textarea" rows="3" onChange={this.onChangeDescription}/>
@@ -441,7 +444,7 @@ class Dashboard extends Component {
                             <AceEditor
                                 placeholder=""
                                 mode="json"
-                                theme="github"
+                                theme="solarized_dark"
                                 name="console"
                                 className='console-editor'
                                 onLoad={this.onLoad}
@@ -466,7 +469,7 @@ class Dashboard extends Component {
                         </div>
 
                         <Button className='problem' 
-                                variant="danger" 
+                                variant="outline-secondary"
                                 onClick={() => {this.runCode(this.state.active)}}
                                 disabled={this.state.running}>
                             Run Code
@@ -481,7 +484,7 @@ class Dashboard extends Component {
                             </Button>
                         :
                             <Button className='problem' 
-                                    variant="primary" 
+                                    variant="secondary"
                                     onClick={() => {this.submitCode(this.state.active)}}
                                     disabled={this.state.active === '' && this.state.canSubmit === false}>
                                 Submit

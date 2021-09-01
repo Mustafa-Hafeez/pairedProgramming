@@ -28,6 +28,7 @@ const UserSchema = new Schema(
         firstname: String,
         lastname: String,
         type: String,
+        partner_username: String,
         admin: Boolean,
         utorid: String
     },
@@ -64,10 +65,14 @@ function createUser(data, callback) {
         password: pass,
         firstname: data.firstname,
         lastname: data.lastname,
-        type:data.type,
-        admin:false,
+        type: data.type,
+        partner_username: data.type == 3 || data.type == 4 ? data.partner_username : '',
+        admin: false,
         utorid:''
     };
+    console.log(data.type == 3);
+    console.log(data.partner_username);
+
     Users.create(user, callback);
 }
 

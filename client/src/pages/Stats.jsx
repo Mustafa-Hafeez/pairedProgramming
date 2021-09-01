@@ -10,8 +10,9 @@ import Spinner from 'react-bootstrap/Spinner'
 
 import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-github";
-
+import "ace-builds/src-noconflict/theme-xcode";
 
 import "./style/Home.css";
 import "./style/Stats.css";
@@ -295,12 +296,12 @@ class Stats extends Component {
                                 {this.state.problemComplete ?
                                     <Badge pill variant="success">Complete</Badge>
                                 :
-                                    <Badge pill variant="warning">Incomplete</Badge>
+                                    <Badge pill variant="primary">Incomplete</Badge>
                                 }
                             </div>
                             <div className='status-item'> 
                                 {this.state.active !== '' && this.state.running ?
-                                    <Badge pill variant="danger">Running...</Badge>
+                                    <Badge pill variant="info">Running...</Badge>
                                 :
                                     <span></span>
                                 }
@@ -327,7 +328,7 @@ class Stats extends Component {
                         <AceEditor
                             placeholder="Enter python code"
                             mode="python"
-                            theme="github"
+                            theme="solarized_dark"
                             name="editor"
                             className="editor"
                             onLoad={this.onLoad}
@@ -365,7 +366,7 @@ class Stats extends Component {
                             <AceEditor
                                 placeholder=""
                                 mode="json"
-                                theme="github"
+                                theme="solarized_dark"
                                 name="console"
                                 className='console-editor'
                                 onLoad={this.onLoad}

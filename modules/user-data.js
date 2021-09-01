@@ -28,6 +28,7 @@ const UserDataSchema = new Schema(
         id: String,
         attempts: [new Schema({
             code: String,
+            lloc: Number,
             output: String,
             elapsedTime: Number
         }, { timestamps: true })],
@@ -55,11 +56,15 @@ function getProblemData(id, callback) {
     UserData.findOne({id: id}, callback);
 }
 
-
-
 function addAttempt(email, id, data, callback) {
+    let lineCount = 0;
+    let spaceSplits = data.code.split("%0A");
+    for (var i = 0; i < spaceSplits.length; i++) {
+        if (spaceSplits[i].length != 0) lineCount++;
+    }
     var attempt = {
         code: data.code,
+        lloc: lineCount,
         output: data.output,
         elapsedTime: data.elapsedTime
     }

@@ -27,15 +27,16 @@
     font-size: 10pt;
 
     background: white;
-    color: #666;
-    border: solid 1px #666;
+    color: #133B5C;
+    border: solid 1px #133B5C;
+    border-radius: 10px;
 
     overflow: hidden;
     margin-right: 100px;
 }
 
 .drop-item {
-    color: #666; 
+    color: #133B5C; 
     font-size: 10pt;
 }
 

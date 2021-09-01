@@ -106,18 +106,17 @@ class App extends Component {
                     <div className='nav'>
                         <div className='logo'>PyBuggy</div>
                         <div className='nav-cont'>
-                            {this.state.id !== '' ?
+                            {this.state.id !== '' ? <div className='firstname'>Welcome,&nbsp;&nbsp;<div className="lastname">{this.state.firstname} {this.state.lastname}</div></div> : ''}
+                            {/* {this.state.id !== '' ?
                                 <div className='userID'>ID: <span className='highlight'>{this.state.id}</span></div>
                             :
                                 <span></span>
-                            }
+                            } */}
                             {this.state.isAdmin ?
                                 <div className='admin-tag'>A</div>
                             :
                                 <span></span>
                             }
-                            <div className='firstname'>{this.state.firstname}</div>
-                            <div className='lastname'>{this.state.lastname}</div>
                             <div className='nav-item'><Link to="/">Home</Link></div>
                             {this.state.isAdmin ?
                                 <div className='nav-item'><Link to="/stats">Stats</Link></div>

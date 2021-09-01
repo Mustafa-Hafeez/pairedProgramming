@@ -57,9 +57,13 @@
     color: #4f4797;
 }
 
-.firstname, .lastname {
-    font-size: 15pt;
-    text-transform: uppercase;
+.firstname {
+    text-transform: capitalize;
+}
+
+.lastname {
+    color: #6B7AA1;
+    font-weight: 500;
 }
 
 .lastname {
@@ -70,7 +74,7 @@
     width: 15px;
     height: 15px;
     border-radius: 5px;
-    background: red;
+    background: #6C5B7B;
     color: white;
     display: flex;
     flex-direction: row;
@@ -85,7 +89,7 @@
 }
 
 .highlight {
-    color: #2cb54c;
+    color: #C1A1D3;
     margin-left: 10px;
     margin-right: 10px;
 }

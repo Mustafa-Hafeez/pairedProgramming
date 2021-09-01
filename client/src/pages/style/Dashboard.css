@@ -19,7 +19,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0px;
-    border-right: 1px solid #ccc;
+    border-right: 1px groove #6C5B7B;
     padding-top: 0;
 }
 
@@ -30,11 +30,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #8896b8;
     font-weight: 10px;
-    background: #444;
+    background: #012b36;
     margin-bottom: 20px;
-    border: 1px solid #444;
 }
 
 .problem {
@@ -78,11 +77,11 @@
 }
 
 .console-editor {
-    color: #777;
+    color: #2C2E43;
 }
 
 .problem-info {
-    border: 1px solid #ccc;
+    border: 1px solid #6C5B7B;
     border-radius: 2px;
     padding: 10px;
     margin-bottom: 10px;
@@ -92,12 +91,19 @@
 
 .title {
     font-size: 18pt;
-    color: #000;
+    font-weight: 600;
+    color: #0A043C;
+    margin-left: 5px;
     margin-bottom: 5px;
 }
 
+.problem-divider {
+    color: #0A043C;
+}
+
 .description {
-    color: #333;
+    font-weight: 400;
+    color: #213050;
     margin-left: 5px;
 }
 

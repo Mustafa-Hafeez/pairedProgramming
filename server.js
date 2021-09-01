@@ -77,7 +77,7 @@ function login(err, data, password, req, res) {
         if (Users.verifyPass(data, password)) return createSession(data.email, req, res, user);
         else res.status(401).json({ error: 0, msg: "Incorrect Password" });
     } 
-    else return res.status(401).json({ error: 1, msg: "Username/Email does not exists" });
+    else return res.status(401).json({ error: 1, msg: "Username/Email does not exist" });
 }
 
 function runScript(email, id, code, req, res) {
@@ -373,13 +373,13 @@ app.get('/api/checkToken', withAuth, function(req, res) {
     var email = decode(decoded.emailhash);
     
     Users.findByEmail(email, function(err, data) {
-        res.status(200).json({
+        data ? res.status(200).json({
             firstname: data.firstname,
             lastname: data.lastname,
             email: data.email,
             isAdmin: data.admin,
             id: data._id
-        });
+        }) : console.log("oops");
     });
 });
 

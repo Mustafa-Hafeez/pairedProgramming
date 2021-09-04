@@ -90,6 +90,7 @@ function runScript(email, id, code, req, res) {
         result.stdout += stderr;
 
         Users.findByEmail(email, (err, data) => {
+            //data.type -> 1 : All users get same message
             errorParser.parse(1, result.stdout, (err, parsed) => {
                 function callback(err, data) {
                     if (err) res.status(200).json({output:parsed.output, attempts:0});

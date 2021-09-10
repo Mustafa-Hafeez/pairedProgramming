@@ -444,7 +444,7 @@ class Dashboard extends Component {
                             <AceEditor
                                 placeholder=""
                                 mode="json"
-                                theme="solarized_dark"
+                                theme="github"
                                 name="console"
                                 className='console-editor'
                                 onLoad={this.onLoad}

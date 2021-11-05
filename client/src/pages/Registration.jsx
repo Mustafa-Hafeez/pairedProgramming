@@ -142,10 +142,8 @@ class Registration extends Component {
             />
             
             <select name='type' value={this.state.type} onChange={this.handleInputChange}>
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
+                <option value={1}>1 - Working Alone</option>
+                <option value={2}>2 - Paired Programming</option>
             </select>
 
             <input

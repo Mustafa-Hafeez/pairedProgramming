@@ -178,7 +178,8 @@ class Registration extends Component {
                     <li>I may receive compensation in the form of a bonus mark in <strong>CSCA20</strong></li>
                     <li>I am free to withdraw at any time during the study without the need to give any explanation or penalty.</li>
                     <li>All materials and results will be kept confidential. Identifying information is collected for the sole purpose of attributing bonus marks. </li>
-                    <li>I can contact the course instructor, Brian Harrington (brian.harrigton@utsc.utoronto.ca) or invigilator Mustafa (mustafa.hafeez@mail.utoronto.ca) with any questions or concerns.</li>
+                    <li>Alternatively, if you do not want to attend our sessions but still want a 2% bonus, you will need to complete a written assignment (Email Mustafa for details) </li>
+                    <li>I can contact the course instructor, Brian Harrington (brian.harrigton@utoronto.ca) or invigilators Mustafa (mustafa.hafeez@mail.utoronto.ca) or Yara(yara.radwan@mail.utoronto.ca) with any questions or concerns.</li>
                 </ul>
 
                 {this.state.working ?

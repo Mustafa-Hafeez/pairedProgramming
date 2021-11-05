@@ -223,7 +223,7 @@ class Dashboard extends Component {
 
     submitCode = (id) => {
         if (this.state.canSubmit) {
-            var msg = prompt("Were any of the bugs challenging? If yes, why?");
+            var msg = prompt("Did you work with a partner? If yes, enter their student number. If no, enter no");
             if (msg && msg !== '') {
 
                 fetch('/api/submit', {

@@ -11,6 +11,8 @@ const UserData = require('./modules/user-data');
 const Errors = require('./modules/errors');
 const errorParser = require('./modules/error-parser');
 const Cryptr = require('cryptr');
+console.log("YURRRR")
+console.log(process.env.SECRET)
 const cryptr = new Cryptr(process.env.SECRET);
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
@@ -369,7 +371,8 @@ app.get("/api/problems/data/:id", withAuth, (req, res) => {
 });
 
 app.get('/api/checkToken', withAuth, function(req, res) {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
+    console.log(process.env.SECRET)
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
     

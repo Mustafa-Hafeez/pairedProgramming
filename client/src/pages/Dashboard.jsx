@@ -223,12 +223,23 @@ class Dashboard extends Component {
 
     submitCode = (id) => {
         if (this.state.canSubmit) {
-            var msg = prompt("Did you work with a partner? If yes, enter their student number. If no, enter no");
-            if (msg && msg !== '') {
-
+            let isPair = false;
+            var getPair = prompt("Did you work in a pair today? Type 'Y' for yes, anything else for no.", "Y");
+            let partnerNum = 0;
+            switch(getPair) {
+              case "Y":
+                isPair = true;
+                break;
+              default:
+                isPair = false;
+            }
+            if (isPair) {
+                partnerNum = prompt("So you worked in a pair... Please enter your partner's student number.");
+            }
+            if (partnerNum >= 0) {
                 fetch('/api/submit', {
                     method: 'POST',
-                    body: JSON.stringify({id: id, studentMsg: msg}),
+                    body: JSON.stringify({id: id, isPair: isPair, pairNum: partnerNum}),
                     headers: {
                         'Accept': 'application/json, text/plain, */*',  // It can be used to overcome cors errors
                         'Content-Type': 'application/json'
@@ -247,11 +258,11 @@ class Dashboard extends Component {
                 }) 
                 .catch(err => {
                     console.error(err);
-                    alert('Error logging in please try again');
+                    alert('Error logging in. Please try again.');
                 });
             }
             else {
-                alert("Please write an explanation.");
+                alert("Please enter a valid student number.");
             }
         }
         else {

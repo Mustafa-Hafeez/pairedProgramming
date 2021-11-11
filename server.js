@@ -514,7 +514,7 @@ app.post("/api/submit", withAuth, (req, res) => {
         id: req.body.id
     };
 
-    UserData.completeProblem(data.email, data.id, req.body.studentMsg, callback);
+    UserData.completeProblem(data.email, data.id, req.body.isPair, req.body.pairNum, callback);
 });
 
 app.post("/api/user/utorids", withAuth, (req, res) => {

@@ -32,7 +32,8 @@ const UserDataSchema = new Schema(
             output: String,
             elapsedTime: Number
         }, { timestamps: true })],
-        studentMsg: String,
+        isPair: Boolean,
+        pairNum: Number,
         complete: Boolean
     },
     { timestamps: true }
@@ -104,7 +105,7 @@ function addAttempt(email, id, data, callback) {
     });
     
 }
-function completeProblem(email, id, studentMsg, callback) {
+function completeProblem(email, id, isPair, pairNum, callback) {
 
     console.log(callback);
 
@@ -114,7 +115,7 @@ function completeProblem(email, id, studentMsg, callback) {
             return callback("Invalid input", null);
         }
         else {
-            UserData.updateOne({email: email, id: id}, {studentMsg: studentMsg, complete: true}, (err, data) => {
+            UserData.updateOne({email: email, id: id}, {isPair: isPair, pairNum: pairNum, complete: true}, (err, data) => {
                 console.log(err, data, callback);
                 callback(err, data);
             });

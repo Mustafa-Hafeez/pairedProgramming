@@ -296,7 +296,7 @@ app.get("/api/problems/:id", withAuth, (req, res) => {
 });
 
 app.post("/api/problems", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -321,7 +321,7 @@ app.post("/api/problems", withAuth, (req, res) => {
 });
 
 app.delete("/api/problems", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -344,7 +344,7 @@ app.delete("/api/problems", withAuth, (req, res) => {
 });
 
 app.get("/api/problems/data/:id", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -372,6 +372,7 @@ app.get("/api/problems/data/:id", withAuth, (req, res) => {
 
 app.get('/api/checkToken', withAuth, function(req, res) {
     var token = req.headers.cookie.split("token=")[1];
+    console.log(token)
     console.log(process.env.SECRET)
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
@@ -389,7 +390,7 @@ app.get('/api/checkToken', withAuth, function(req, res) {
 
 app.post('/api/run', withAuth, function(req, res){
     var code = req.body.code;
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -418,7 +419,7 @@ app.post('/api/run', withAuth, function(req, res){
 // User Data
 
 app.get("/api/user/data/:id", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -443,7 +444,7 @@ app.get("/api/user/data/:id", withAuth, (req, res) => {
 });
 
 app.get("/api/attempts/:id", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -463,7 +464,7 @@ app.get("/api/attempts/:id", withAuth, (req, res) => {
 });
 
 app.post("/api/user/data/:id", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -483,7 +484,7 @@ app.post("/api/user/data/:id", withAuth, (req, res) => {
 
 app.delete("/api/user/data/:id", withAuth, (req, res) => {
 
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -500,7 +501,7 @@ app.delete("/api/user/data/:id", withAuth, (req, res) => {
 });
 
 app.post("/api/submit", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 
@@ -514,11 +515,11 @@ app.post("/api/submit", withAuth, (req, res) => {
         id: req.body.id
     };
 
-    UserData.completeProblem(data.email, data.id, req.body.studentMsg, callback);
+    UserData.completeProblem(data.email, data.id, req.body.isPair, req.body.pairNum, callback);
 });
 
 app.post("/api/user/utorids", withAuth, (req, res) => {
-    var token = req.headers.cookie.split("=")[1];
+    var token = req.headers.cookie.split("token=")[1];
     var decoded = jwt.verify(token, process.env.SECRET);
     var email = decode(decoded.emailhash);
 

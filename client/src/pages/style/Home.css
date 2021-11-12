@@ -123,6 +123,7 @@ h1 {
 input {
     background-color: #213050;
     padding: 10px;
+    margin-bottom: 30px;
     border-radius: 1em;
     padding-left: 15px;
     border: none;

@@ -14,8 +14,8 @@ class Registration extends Component {
             password: '',
             firstname: '',
             lastname: '',
-            type: 0,
-            partner_username: '',
+            // type: 0,
+            // partner_username: '',
             isLoggedIn: false,
             working:false
         };
@@ -34,8 +34,8 @@ class Registration extends Component {
 
         if (!this.state.working) {
             this.setState({working:true});
-            console.log("we in here");
-            console.log(this.state.partner_username);
+            // console.log("we in here");
+            // console.log(this.state.partner_username);
             fetch('/api/signup', {
                 method: 'POST',
                 body: JSON.stringify(this.state),
@@ -141,12 +141,12 @@ class Registration extends Component {
                 required
             />
             
-            <select name='type' value={this.state.type} onChange={this.handleInputChange}>
+            {/* <select name='type' value={this.state.type} onChange={this.handleInputChange}>
                 <option value={1}>1 - Working Alone</option>
                 <option value={2}>2 - Paired Programming</option>
-            </select>
+            </select> */}
 
-            <input
+            {/* <input
                 className="register-input"
                 type="text"
                 name="partner_username"
@@ -154,7 +154,7 @@ class Registration extends Component {
                 value={this.state.partner_username}
                 onChange={this.handleInputChange}
             />
-            
+             */}
             <input className="submit" type="submit" value="Submit"/>
         </form>);
         var page = this.state.isLoggedIn ? this.props.history.push('/') : loginForm;

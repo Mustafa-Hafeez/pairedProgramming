@@ -32,7 +32,8 @@ const UserDataSchema = new Schema(
             output: String,
             elapsedTime: Number
         }, { timestamps: true })],
-        studentMsg: String,
+        isPair: Boolean,
+        pairNum: Number,
         complete: Boolean
     },
     { timestamps: true }
